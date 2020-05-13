@@ -1,38 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+
+/* GLOBAL CSS */
+
+* {
+  box-sizing: border-box;
+}
+
+button:active {
+  transform: translate(1px, 4px);
+}
+
+li,
+p {
+  font-family: "Balsamiq Sans", cursive;
+}
+
+h2 {
+  font-family: "Dancing Script", cursive;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+h4 {
+  font-family: "Balsamiq Sans", cursive;
+  letter-spacing: 3px;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 1vw;
+}
+
+/* HEADER */
+
+.header-wrapper {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  box-shadow: 1px 1px 5px gray;
+}
+
+.title {
+  font-size: 3vw;
+  margin-left: 2vw;
+  font-family: "Dancing Script", cursive;
+  letter-spacing: 7px;
+  text-shadow: 1px 1px 2px gray;
+}
+
+.search-bar {
+  height: 4vh;
+  width: 50%;
+  font-size: 1.5vw;
+  padding: 1.5vw;
+  box-shadow: 1px 1px 5px gray;
+  outline: none;
+  opacity: 50%;
+}
+
+.search-bar:focus {
+  opacity: 100%;
+}
+
+.submit-btn {
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 5px;
+  padding: 0.5vw;
+  font-size: 1vw;
+  /* margin-right: 2vw; */
+  cursor: pointer;
+  background: #111;
+  outline: none;
+  box-shadow: 1px 1px 2px gray;
+}
+
+.fave-btn {
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
+  letter-spacing: 5px;
+  padding: 0.5vw;
+  font-size: 1vw;
+  margin-right: 2vw;
+  cursor: pointer;
+  background: #111;
+  outline: none;
+  box-shadow: 1px 1px 5px gray;
+}
+
+.fave-btn:hover,
+.submit-btn:hover {
+  background: rgb(41, 41, 41);
+}
+
+.fave-btn p {
+  display: inline;
+  margin: 0 10px;
+  color: #fff;
+}
+
+.star {
+  transform: translateY(3px);
+  color: #fff;
+  display: inline;
+}
+
+.recipe-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  flex-basis: content;
 }
 
-.App-link {
-  color: #61dafb;
+/* RECIPE CARDS */
+
+.recipe-card {
+  width: 20vw;
+  max-height: 40vh;
+  background-image: url("https://cdn.iconscout.com/icon/premium/png-256-thumb/cooking-1562654-1324094.png");
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: bottom;
+  margin: 1vw;
+  box-shadow: 2px 1px 10px gray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-img-wrapper {
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+
+.card-img {
+  width: 100%;
+  max-height: 30vh;
+}
+
+.recipe-title-wrapper {
+  display: flex;
+  align-items: center;
+  transform: translateY(-4vh);
+  border: solid 1px black;
+  height: 4vh;
+  background: white;
+  opacity: 70%;
+}
+
+.recipe-title {
+  color: black;
+}
+
+.card-footer {
+  background: white;
+  opacity: 95%;
+  height: 6vh;
+  display: flex;
+  padding: 1.5vw;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-4vh);
+  border-bottom: 1px solid gray;
+}
+
+.card-star {
+  font-size: 1.5vw;
+}
+
+.card-fave-btn {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.recipe-btn {
+  font-family: "Dancing Script", cursive;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 0.5vw;
+  font-size: 1vw;
+  cursor: pointer;
+  background: #111;
+  outline: none;
+}
+.recipe-btn:hover {
+  background: rgb(88, 88, 88);
+}
+
+/* RECIPE PAGE */
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px black;
+  width: 80%;
+}
+
+.popup-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  box-shadow: 1px 1px 5px gray;
+}
+
+.popup-header-container h1 {
+  font-family: "Dancing Script", cursive;
+  letter-spacing: 5px;
+  margin-left: 2vw;
+  font-size: 3vw;
+  text-shadow: 1px 1px 2px gray;
+}
+
+.popup-header-container button {
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 2vw;
+  cursor: pointer;
+}
+
+.popup-header-container h4 {
+  letter-spacing: 4px;
+  font-style: italic;
+}
+
+.popup-header-container button:hover {
+  color: crimson;
+}
+
+.popup-img-text-container {
+  border: solid 1px black;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ingredients-container {
+  border: solid 1px black;
+  padding: 2vw;
+  width: 50%;
+}
+
+.ingredients-container li {
+  padding: 0.5vw;
+  border-bottom: solid 1px gray;
+}
+
+.popup-img-container {
+  border: solid 1px black;
+  width: 50%;
+}
+
+.instructions-container {
+  border: solid 1px black;
+  width: 100%;
+  padding: 2vw;
+}
+.instructions-container li {
+  padding: 0.75vw;
+  border-bottom: solid 1px gray;
 }
