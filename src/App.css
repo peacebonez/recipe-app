@@ -112,8 +112,9 @@ h4 {
 .recipe-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  flex-basis: content;
+  /* flex-basis: content; */
 }
 
 /* RECIPE CARDS */
@@ -138,6 +139,7 @@ h4 {
 .card-img {
   width: 100%;
   max-height: 30vh;
+  cursor: pointer;
 }
 
 .recipe-title-wrapper {
@@ -152,6 +154,7 @@ h4 {
 
 .recipe-title {
   color: black;
+  margin: 5px;
 }
 
 .card-footer {
@@ -195,18 +198,22 @@ h4 {
 /* RECIPE PAGE */
 
 .popup-container {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: solid 1px black;
-  width: 80%;
+  width: 60%;
+  display: none;
+  z-index: 1;
+  background: #fff;
 }
 
 .popup-header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   border-bottom: 1px solid gray;
   box-shadow: 1px 1px 5px gray;
@@ -226,6 +233,7 @@ h4 {
   outline: none;
   font-size: 2vw;
   cursor: pointer;
+  transform: translateY(-4vw);
 }
 
 .popup-header-container h4 {
@@ -258,6 +266,11 @@ h4 {
 .popup-img-container {
   border: solid 1px black;
   width: 50%;
+}
+
+.popup-img-container img {
+  width: 100%;
+  height: 100%;
 }
 
 .instructions-container {

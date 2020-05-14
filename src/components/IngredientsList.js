@@ -1,19 +1,16 @@
 import React from "react";
 
-export default function IngredientsList({ ingredients }) {
+export default function IngredientsList({ ingredientLines, yields }) {
   return (
     <div className="ingredients-container">
       <h2>Ingredients</h2>
-      <h4>Yield: 4</h4>
+      <h4>Yield: {yields}</h4>
       {/* <ul>map over ingredients</ul> */}
+
       <ul>
-        <li>cook</li>
-        <li>cook</li>
-        <li>cook</li>
-        <li>cook</li>
-        <li>cook</li>
-        <li>cook</li>
-        <li>cook</li>
+        {ingredientLines.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
       </ul>
     </div>
   );

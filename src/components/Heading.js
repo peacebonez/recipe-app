@@ -3,34 +3,16 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Axios from "axios";
 
-const APP_ID = "aaa6d635";
-const APP_KEY = "d7935c71fa4deed8f5f442f7f910a12c";
-const rawUrl =
-  "https://api.edamam.com/search?q=chicken&app_id=aaa6d635&app_key=d7935c71fa4deed8f5f442f7f910a12c";
-
-export default function Heading() {
-  const [query, setQuery] = useState("");
-  const [recipeArr, setRecipeArr] = useState([]);
-  let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`;
-
-  const getData = async () => {
-    console.log("GET DATA INITIATED");
-    const result = await Axios.get(url);
-    console.log("result:", result);
-    console.log(result.data.hits[0].recipe.label);
-    setRecipeArr(result.data.hits);
+export default function Heading({
+  query,
+  handleChange,
+  handleSubmit,
+  recipes,
+}) {
+  const clickLog = (e) => {
+    console.log(e.target);
+    console.log(e.target.name);
   };
-
-  const handleChange = (e) => {
-    setQuery(e.target.value);
-  };
-  const handleSubmit = () => {
-    getData();
-    setQuery("");
-  };
-
-  console.log("query:", query);
-  console.log("recipeArr,", recipeArr);
   return (
     <div className="header-wrapper">
       <h1 className="title">Food Finder</h1>
@@ -45,7 +27,7 @@ export default function Heading() {
       <button className="submit-btn" onClick={handleSubmit}>
         Submit
       </button>
-      <button className="fave-btn">
+      <button className="fave-btn" name="fave-btn" onClick={clickLog}>
         <FaStar className="star" />
         <p>Favorites</p>
         <FaStar className="star" />
