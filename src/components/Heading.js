@@ -28,8 +28,8 @@ export default function Heading({
         Submit
       </button>
       <button className="fave-btn" name="fave-btn" onClick={clickLog}>
-        <FaStar className="star" />
-        <p>Favorites</p>
+        <FaStar className="star" /> <FaStar className="star" />
+        {"  "}
         <FaStar className="star" />
       </button>
     </div>

@@ -72,7 +72,6 @@ h4 {
   letter-spacing: 5px;
   padding: 0.5vw;
   font-size: 1vw;
-  /* margin-right: 2vw; */
   cursor: pointer;
   background: #111;
   outline: none;
@@ -82,7 +81,6 @@ h4 {
 .fave-btn {
   font-family: "Dancing Script", cursive;
   font-weight: bold;
-  letter-spacing: 5px;
   padding: 0.5vw;
   font-size: 1vw;
   margin-right: 2vw;
@@ -156,6 +154,7 @@ h4 {
 .recipe-title {
   color: black;
   margin: 5px;
+  font-size: 1vw;
 }
 
 .card-footer {
@@ -178,6 +177,11 @@ h4 {
   border: none;
   outline: none;
   cursor: pointer;
+  transition: all 0.4s;
+}
+
+.card-fave-btn:hover {
+  color: gold;
 }
 
 .recipe-btn {
@@ -198,33 +202,38 @@ h4 {
 /* RECIPE PAGE */
 
 .popup-container {
-  position: absolute;
+  padding: 1vw;
+  max-height: 60vw;
+  margin-top: 4vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid 1px black;
-  width: 60%;
-  /* display: none; */
+  border-radius: 8px;
+  width: 50%;
   z-index: 1;
   background: #fff;
+  border-radius: 8px;
+
+  position: fixed;
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .popup-header-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  border-bottom: 1px solid gray;
   box-shadow: 1px 1px 5px gray;
 }
 
-.popup-header-container h1 {
-  font-family: "Dancing Script", cursive;
-  letter-spacing: 5px;
-  margin-left: 2vw;
-  font-size: 3vw;
-  text-shadow: 1px 1px 2px gray;
+.x-container {
+  display: flex;
+  align-self: flex-end;
 }
 
 .popup-header-container button {
@@ -233,29 +242,48 @@ h4 {
   outline: none;
   font-size: 2vw;
   cursor: pointer;
-  transform: translateY(-4vw);
-}
-
-.popup-header-container h4 {
-  letter-spacing: 4px;
-  font-style: italic;
 }
 
 .popup-header-container button:hover {
   color: crimson;
 }
 
+.popup-header-container h1 {
+  font-family: "Dancing Script", cursive;
+  width: 80%;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 2.5vw;
+  text-shadow: 1px 1px 2px gray;
+  word-wrap: normal;
+}
+
+.popup-header-container h4 {
+  font-size: 1vw;
+  letter-spacing: 4px;
+  line-height: 1.5vw;
+  font-style: italic;
+  margin-left: 2vw;
+  transform: translateY(-0.5vw);
+}
+
+.label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .popup-img-text-container {
-  border: solid 1px black;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
 .ingredients-container {
-  border: solid 1px black;
   padding: 2vw;
   width: 50%;
+  max-height: 20vw;
+  overflow-y: scroll;
 }
 
 .ingredients-container li {
@@ -264,6 +292,7 @@ h4 {
 }
 
 .popup-img-container {
+  max-height: 20vw;
   border: solid 1px black;
   width: 50%;
 }
@@ -278,6 +307,7 @@ h4 {
   width: 100%;
   padding: 2vw;
 }
+
 .instructions-container li {
   padding: 0.75vw;
   border-bottom: solid 1px gray;
