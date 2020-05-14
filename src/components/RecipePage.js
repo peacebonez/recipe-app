@@ -22,7 +22,7 @@ export default function RecipePage({
       <div className="popup-header-container">
         <h1>{label}</h1>
         <h4>{healthLabels}</h4>
-        <button onClick={() => handleClose(id)} name={"btn-" + id}>
+        <button onClick={handleClose} name={"btn-" + id}>
           <FaTimes name={"btn-" + id} />
         </button>
       </div>

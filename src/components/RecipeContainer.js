@@ -5,18 +5,6 @@ import RecipePage from "./RecipePage";
 
 export default function RecipeContainer({ recipes }) {
   let id = 0;
-  const [isShown, setIsShown] = useState(false);
-  const handleOpen = (id) => {
-    console.log("id", id);
-    // return "btn-" + id === e.target.name ? setIsShown(true) : null;
-    // setIsShown(true);
-  };
-
-  const handleClose = (id) => {
-    console.log("target name", id);
-    // return "btn-" + id === e.target.name ? setIsShown(false) : null;
-    //   setIsShown(false);
-  };
 
   console.log("Recipes in the container,", recipes[0]);
   return (
@@ -40,18 +28,9 @@ export default function RecipeContainer({ recipes }) {
                   label={label}
                   image={image}
                   url={url}
-                  handleOpen={handleOpen}
-                />
-                <RecipePage
-                  id={recipeObj.recipe.id}
-                  label={label}
-                  image={image}
                   ingredientLines={ingredientLines}
                   healthLabels={healthLabels}
                   yields={yields}
-                  isShown={isShown}
-                  setIsShown={setIsShown}
-                  handleClose={handleClose}
                 />
               </div>
             );
