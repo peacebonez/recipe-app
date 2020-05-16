@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import RecipeCard from "./RecipeCard";
 
-export default function RecipeContainer({ recipes, handleFave, isFave }) {
+export default function RecipeContainer({ recipes, handleFave, removeFave }) {
   let id = 0;
 
   //   console.log("Recipes in the container,", recipes[0]);
@@ -31,7 +31,7 @@ export default function RecipeContainer({ recipes, handleFave, isFave }) {
                   healthLabels={healthLabels}
                   yields={yields}
                   handleFave={handleFave}
-                  isFave={isFave}
+                  removeFave={removeFave}
                 />
               </div>
             );

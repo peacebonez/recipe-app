@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import RecipePage from "./RecipePage";
 
-export default function RecipeCard({
+export default function FaveCard({
   id,
   url,
   label,
@@ -11,11 +11,9 @@ export default function RecipeCard({
   ingredientLines,
   healthLabels,
   yields,
-  handleFave,
   removeFave,
 }) {
   const [isShown, setIsShown] = useState(false);
-  const [isFave, setIsFave] = useState(false);
 
   const handleOpen = () => {
     setIsShown(true);
@@ -23,16 +21,6 @@ export default function RecipeCard({
 
   const handleClose = () => {
     setIsShown(false);
-  };
-
-  const setStar = () => {
-    if (isFave) {
-      setIsFave(false);
-      removeFave(id);
-    } else {
-      setIsFave(true);
-      handleFave(arguments[0]);
-    }
   };
 
   return (
@@ -52,8 +40,10 @@ export default function RecipeCard({
         <div className="card-footer">
           <button
             className="card-fave-btn"
-            style={{ color: isFave ? "gold" : "black" }}
-            onClick={setStar}
+            style={{ color: "gold" }}
+            onClick={() => {
+              removeFave(id);
+            }}
           >
             <FaStar className="card-star" />
           </button>

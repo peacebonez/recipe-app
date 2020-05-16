@@ -1,36 +1,32 @@
 import React from "react";
-import { useState } from "react";
 import { FaStar } from "react-icons/fa";
-import Axios from "axios";
 
 export default function Heading({
   query,
   handleChange,
   handleSubmit,
-  recipes,
+  isError,
 }) {
-  const clickLog = (e) => {
-    console.log(e.target);
-    console.log(e.target.name);
-  };
   return (
     <div className="header-wrapper">
       <h1 className="title">Food Finder</h1>
       <input
         type="text"
-        className="search-bar"
+        className={isError ? "search-bar error" : "search-bar"}
         name="search"
         value={query}
-        placeholder="Search for Recipe..."
+        placeholder={isError ? "RECIPE NOT FOUND" : "Search for Recipe..."}
         onChange={handleChange}
       ></input>
       <button className="submit-btn" onClick={handleSubmit}>
         Submit
       </button>
-      <button className="fave-btn" name="fave-btn" onClick={clickLog}>
-        <FaStar className="star" /> <FaStar className="star" />
-        {"  "}
-        <FaStar className="star" />
+      <button className="fave-btn" name="fave-btn">
+        <div className="star-container">
+          <FaStar className="star" /> <FaStar className="star" />
+          {"  "}
+          <FaStar className="star" />
+        </div>
       </button>
     </div>
   );
