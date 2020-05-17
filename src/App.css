@@ -164,7 +164,7 @@ h4 {
   background-repeat: repeat;
   background-size: cover;
   background-position: bottom;
-  box-shadow: 2px 1px 10px gray;
+  box-shadow: 2px 1px 30px gray;
   border-radius: 8px;
   transition: all 0.4s;
 
@@ -228,7 +228,8 @@ h4 {
 }
 
 .card-star:hover {
-  color: gold;
+  /* color: gold; */
+  transform: rotate(360deg);
 }
 
 .card-fave-btn {
@@ -310,12 +311,14 @@ h4 {
 
 .popup-header-container h1 {
   font-family: "Dancing Script", cursive;
+  padding-bottom: 15px;
   width: 80%;
   text-align: center;
   letter-spacing: 5px;
   font-size: 2.5vw;
   text-shadow: 1px 1px 2px gray;
   word-wrap: normal;
+  border-bottom: solid 1px black;
 }
 
 .popup-header-container h4 {

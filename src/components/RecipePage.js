@@ -18,9 +18,9 @@ export default function RecipePage({
   const popupRef = React.useRef();
   useEffect(() => {
     window.onclick = function (e) {
-      console.log("target", e.target);
-      console.log("pop up ref in Effect", popupRef.current);
-      console.log("is Shown?", isShown);
+      // console.log("target", e.target);
+      // console.log("pop up ref in Effect", popupRef.current);
+      // console.log("is Shown?", isShown);
 
       if (isShown && popupRef.current.contains(e.target)) {
         // setIsShown(true);

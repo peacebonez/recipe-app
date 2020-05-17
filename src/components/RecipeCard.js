@@ -29,11 +29,11 @@ export default function RecipeCard({
 
   const setStar = () => {
     if (isFave) {
-      setIsFave(false);
       removeFave(id);
+      setIsFave(false);
     } else {
-      setIsFave(true);
       handleFave(arguments[0]);
+      setIsFave(true);
     }
   };
 
