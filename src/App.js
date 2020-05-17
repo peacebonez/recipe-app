@@ -5,18 +5,8 @@ import Axios from "axios";
 import Heading from "./components/Heading";
 import RecipeContainer from "./components/RecipeContainer";
 import FavesContainer from "./components/FavesContainer";
-import Loading from "./Loading";
+import Loading from "./components/Loading";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-
-// const initRecipes = {
-//   id: idGen(),
-//   label: "Shakshuka",
-//   image:
-//     "https://cdn.loveandlemons.com/wp-content/uploads/2020/03/pantry-recipes-2.jpg",
-//   ingredientLines: "",
-//   healthLabels: "Healthy, Fatty, Quick",
-//   yields: 4,
-// };
 
 const APP_ID = "aaa6d635";
 const APP_KEY = "d7935c71fa4deed8f5f442f7f910a12c";
@@ -76,10 +66,14 @@ function App() {
   };
 
   // handles submission of user query
-  const handleSubmit = (e) => {
-    getData();
-    //sets input bar back to empty
-    setQuery("");
+  const handleSubmit = () => {
+    if (query === "") {
+      setIsError(true);
+      return;
+    } else {
+      getData();
+      setQuery(""); //sets input bar back to empty
+    }
   };
 
   console.log("recipes,", recipes);

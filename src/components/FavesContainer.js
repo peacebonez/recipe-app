@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import FaveCard from "./FaveCard";
 
 export default function FavesContainer({ recipes, removeFave }) {

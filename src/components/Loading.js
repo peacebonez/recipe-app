@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+//Reused from Tyler McGinnis course
+
 const styles = {
   content: {
     fontSize: "3vw",

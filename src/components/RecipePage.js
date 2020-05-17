@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 import IngredientsList from "./IngredientsList";
 
@@ -16,16 +16,18 @@ export default function RecipePage({
   handleClose,
 }) {
   const popupRef = React.useRef();
-  React.useEffect(() => {
+  useEffect(() => {
     window.onclick = function (e) {
-      //   console.log("target", e.target);
-      //   console.log("pop up ref in Effect", popupRef.current);
-      //   console.log("is Shown?", isShown);
-      if (popupRef.current.contains(e.target)) {
-        setIsShown(true);
-      } else {
-        setIsShown(false);
-      }
+      console.log("target", e.target);
+      console.log("pop up ref in Effect", popupRef.current);
+      console.log("is Shown?", isShown);
+
+      if (isShown && popupRef.current.contains(e.target)) {
+        // setIsShown(true);
+      } else if (isShown) setIsShown(false);
+      // else {
+      //   setIsShown(false);
+      // }
     };
   });
 
@@ -62,3 +64,18 @@ export default function RecipePage({
     </div>
   );
 }
+
+// useEffect(() => {
+//   window.onclick = function (e) {
+//     console.log("target", e.target);
+//     console.log("pop up ref in Effect", popupRef.current);
+//     console.log("is Shown?", isShown);
+
+//     if (isShown && popupRef.current.contains(e.target)) {
+//       // setIsShown(true);
+//     } else if (isShown) setIsShown(false);
+//     // else {
+//     //   setIsShown(false);
+//     // }
+//   };
+// });

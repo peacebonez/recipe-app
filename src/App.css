@@ -157,7 +157,8 @@ h4 {
 /* RECIPE CARDS */
 
 .recipe-card {
-  width: 20vw;
+  /* width: 20vw; */
+  width: 300px;
   max-height: 44vh;
   background-image: url("https://cdn.iconscout.com/icon/premium/png-256-thumb/cooking-1562654-1324094.png");
   background-repeat: repeat;
@@ -201,15 +202,12 @@ h4 {
   overflow: auto;
   margin-top: -4.6vh;
 
-  /* transform: translateY(-4vh); */
+  transform: translateY(-4vh);
 }
 
 .recipe-title {
   color: black;
-  font-size: 1.3vw;
-  transform: translateY(-1vw);
   overflow: auto;
-  /* margin: 5px; */
 }
 
 .card-footer {
@@ -222,12 +220,15 @@ h4 {
   transform: translateY(-5vh);
 
   background: white;
-
-  /* padding: 1.5vw; */
 }
 
 .card-star {
-  font-size: 1.5vw;
+  font-size: 20px;
+  transition: all 0.4s;
+}
+
+.card-star:hover {
+  color: gold;
 }
 
 .card-fave-btn {
@@ -249,7 +250,6 @@ h4 {
   font-weight: bold;
   letter-spacing: 2px;
   padding: 0.5vw;
-  font-size: 1vw;
   cursor: pointer;
   background: #111;
   outline: none;

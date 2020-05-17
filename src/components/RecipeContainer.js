@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import RecipeCard from "./RecipeCard";
 
 export default function RecipeContainer({ recipes, handleFave, removeFave }) {
@@ -42,11 +41,3 @@ export default function RecipeContainer({ recipes, handleFave, removeFave }) {
     </div>
   );
 }
-
-let testObj = {
-  tasks: {
-    run: "done",
-    walk: "not done",
-    jog: "tbd",
-  },
-};

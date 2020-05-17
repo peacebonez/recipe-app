@@ -37,6 +37,9 @@ export default function RecipeCard({
     }
   };
 
+  const snipTitle = (title) =>
+    title.length < 21 ? title : title.substring(0, 21) + "...";
+
   return (
     <>
       <div className="recipe-card">
@@ -49,7 +52,7 @@ export default function RecipeCard({
           />
         </div>
         <div className="recipe-title-wrapper">
-          <h4 className="recipe-title">{label}</h4>
+          <h4 className="recipe-title">{snipTitle(label)}</h4>
         </div>
         <div className="card-footer">
           <button
