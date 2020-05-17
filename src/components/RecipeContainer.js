@@ -10,26 +10,28 @@ export default function RecipeContainer({ recipes, handleFave, removeFave }) {
     <div className="recipe-container">
       {recipes
         ? recipes.map((recipeObj) => {
-            id++;
+            id++; //creates a unique id
             const {
-              label,
-              image,
-              ingredientLines,
-              healthLabels,
-              yields,
-              url,
-            } = recipeObj.recipe;
-            recipeObj.recipe.id = id;
+              recipe: {
+                label,
+                image,
+                ingredientLines,
+                healthLabels,
+                yield: servings,
+                url,
+              },
+            } = recipeObj;
+            recipeObj.id = id;
             return (
-              <div className="card-page-container" key={recipeObj.recipe.id}>
+              <div className="card-page-container" key={recipeObj.id}>
                 <RecipeCard
-                  id={recipeObj.recipe.id}
+                  id={recipeObj.id}
                   label={label}
                   image={image}
                   url={url}
                   ingredientLines={ingredientLines}
                   healthLabels={healthLabels}
-                  yields={yields}
+                  servings={servings}
                   handleFave={handleFave}
                   removeFave={removeFave}
                 />
@@ -40,3 +42,11 @@ export default function RecipeContainer({ recipes, handleFave, removeFave }) {
     </div>
   );
 }
+
+let testObj = {
+  tasks: {
+    run: "done",
+    walk: "not done",
+    jog: "tbd",
+  },
+};

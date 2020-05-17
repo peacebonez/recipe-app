@@ -10,7 +10,7 @@ export default function FaveCard({
   image,
   ingredientLines,
   healthLabels,
-  yields,
+  yield: servings,
   removeFave,
 }) {
   const [isShown, setIsShown] = useState(false);
@@ -63,7 +63,7 @@ export default function FaveCard({
         image={image}
         ingredientLines={ingredientLines}
         healthLabels={healthLabels}
-        yields={yields}
+        servings={servings}
         isShown={isShown}
         setIsShown={setIsShown}
         handleClose={handleClose}

@@ -9,7 +9,8 @@ export default function RecipePage({
   image,
   ingredientLines,
   healthLabels,
-  yields,
+  servings,
+  url,
   isShown,
   setIsShown,
   handleClose,
@@ -45,10 +46,18 @@ export default function RecipePage({
         <h4>{healthLabels}</h4>
       </div>
       <div className="popup-img-text-container">
-        <IngredientsList ingredientLines={ingredientLines} yields={yields} />
+        <IngredientsList
+          ingredientLines={ingredientLines}
+          servings={servings}
+        />
         <div className="popup-img-container">
           <img src={image} alt="recipe" />
         </div>
+      </div>
+      <div className="popup-link-container">
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          <button className="url-btn">Open URL</button>
+        </a>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ export default function FavesContainer({ recipes, removeFave }) {
               image,
               ingredientLines,
               healthLabels,
-              yields,
+              yield: servings,
               url,
             } = recipeObj;
             return (
@@ -25,7 +25,7 @@ export default function FavesContainer({ recipes, removeFave }) {
                   url={url}
                   ingredientLines={ingredientLines}
                   healthLabels={healthLabels}
-                  yields={yields}
+                  servings={servings}
                   removeFave={removeFave}
                 />
               </div>

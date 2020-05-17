@@ -3,6 +3,8 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import RecipePage from "./RecipePage";
 
+//length > 21 needs ...  substring(21).concat(...)
+
 export default function RecipeCard({
   id,
   url,
@@ -10,7 +12,7 @@ export default function RecipeCard({
   image,
   ingredientLines,
   healthLabels,
-  yields,
+  servings,
   handleFave,
   removeFave,
 }) {
@@ -73,7 +75,7 @@ export default function RecipeCard({
         image={image}
         ingredientLines={ingredientLines}
         healthLabels={healthLabels}
-        yields={yields}
+        servings={servings}
         isShown={isShown}
         setIsShown={setIsShown}
         handleClose={handleClose}

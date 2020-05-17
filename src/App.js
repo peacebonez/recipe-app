@@ -22,9 +22,13 @@ const APP_ID = "aaa6d635";
 const APP_KEY = "d7935c71fa4deed8f5f442f7f910a12c";
 
 function App() {
+  //recipe array
   const [recipes, setRecipes] = useState([]);
+
   const [faves, setFaves] = useState([]);
+  //user search input
   const [query, setQuery] = useState("");
+
   const [isError, setIsError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -34,10 +38,13 @@ function App() {
   // url for testing purposes
   let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=12`;
 
+  //retrieves data from the API
   const getData = async () => {
     setIsLoading(true);
+    setIsError(false);
     const result = await Axios.get(url);
     console.log("result.data.hits", result.data.hits);
+    //if user search is not found
     if (result.data.hits.length === 0) {
       setIsLoading(false);
       console.log("No results!");
@@ -47,25 +54,31 @@ function App() {
     console.log("result:", result);
     setIsLoading(false);
     setIsError(false);
+    //set the recipes as our result
     setRecipes([...result.data.hits]);
   };
 
+  // sets the favorite recipes array
   const handleFave = (obj) => {
     console.log("Handle Faves obj,", obj);
     setFaves([...faves, obj]);
   };
 
+  // sets the favorite recipes array
   const removeFave = (id) => {
-    setFaves(faves.filter((fave, i) => fave.id !== id));
+    setFaves(faves.filter((fave) => fave.id !== id));
   };
 
+  //handles changes in user input
   const handleChange = (e) => {
     setIsError(false);
     setQuery(e.target.value);
   };
+
+  // handles submission of user query
   const handleSubmit = (e) => {
-    // e.preventDefault();
     getData();
+    //sets input bar back to empty
     setQuery("");
   };
 
@@ -74,7 +87,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <button onClick={(e) => testFunc(e, "shit")}>TEST</button>
         <Heading
           handleChange={handleChange}
           handleSubmit={handleSubmit}
