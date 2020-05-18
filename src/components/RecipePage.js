@@ -35,7 +35,10 @@ export default function RecipePage({
   return (
     <div
       className="popup-container"
-      style={{ display: isShown ? "block" : "none" }}
+      style={{
+        visibility: isShown ? "visible" : "hidden",
+        opacity: isShown ? "100%" : "0%",
+      }}
       ref={popupRef}
     >
       <div className="popup-header-container">

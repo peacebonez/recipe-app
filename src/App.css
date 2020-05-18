@@ -50,7 +50,6 @@ h4 {
   font-family: "Dancing Script", cursive;
   letter-spacing: 7px;
   text-shadow: 1px 1px 2px gray;
-  text-decoration: underline;
 }
 
 .search-bar {
@@ -75,8 +74,9 @@ h4 {
 .submit-btn {
   color: #fff;
   font-weight: bold;
-  letter-spacing: 5px;
+  letter-spacing: 0.3vw;
   padding: 0.75vw;
+  margin-right: 2vw;
   font-size: 1vw;
   cursor: pointer;
   background: #111;
@@ -84,37 +84,15 @@ h4 {
   box-shadow: 1px 1px 2px gray;
 }
 
-.fave-btn {
-  font-weight: bold;
-  padding: 0.5vw;
-  font-size: 1vw;
-  margin-right: 3vw;
-  cursor: pointer;
-  background: #111;
-  outline: none;
-  box-shadow: 1px 1px 5px gray;
-}
-
-.fave-btn:hover {
-  background: rgb(41, 41, 41);
-}
-
 .submit-btn:hover {
   background: rgb(41, 41, 41);
-}
-
-.star {
-  transform: translateY(3px);
-  color: #fff;
-  display: inline;
 }
 
 .home-btn {
   font-weight: bold;
   padding: 0.5vw;
   font-size: 3vw;
-  margin-right: 3vw;
-  margin-left: -2vw;
+  margin: 0.5vw 3vw 0 -2vw;
   cursor: pointer;
   background: none;
   outline: none;
@@ -125,19 +103,9 @@ h4 {
   color: #999;
 }
 
-.fave-container {
-  position: absolute;
-  transform: translate(-11.5vw, 2vw);
-  right: 0;
-}
-
-.fave-container p {
-  transition: all 0.5s;
-}
-
 .home-container {
   position: absolute;
-  transform: translate(-4.65vw, 1.7vw);
+  transform: translate(-4.65vw, 2vw);
   right: 0;
 }
 
@@ -157,7 +125,6 @@ h4 {
 /* RECIPE CARDS */
 
 .recipe-card {
-  /* width: 20vw; */
   width: 300px;
   max-height: 44vh;
   background-image: url("https://cdn.iconscout.com/icon/premium/png-256-thumb/cooking-1562654-1324094.png");
@@ -169,7 +136,6 @@ h4 {
   transition: all 0.4s;
 
   margin: 2.5vw 1vw;
-  /* margin: 1vw; */
 }
 
 .recipe-card:hover {
@@ -228,7 +194,6 @@ h4 {
 }
 
 .card-star:hover {
-  /* color: gold; */
   transform: rotate(360deg);
 }
 
@@ -237,7 +202,7 @@ h4 {
   border: none;
   outline: none;
   cursor: pointer;
-  transition: all 0.4s;
+  transition: all 0.2s;
   transform: translateY(-5px);
 }
 
@@ -280,7 +245,7 @@ h4 {
   border-radius: 8px;
   box-shadow: 2px 2px 10px gray;
 
-  transition: all 0.4s;
+  transition: all 0.5s;
 }
 
 .popup-header-container {
