@@ -33,7 +33,7 @@ function App() {
   //use this URL, gives 100 options
   let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=100`;
 
-  // url for testing purposes
+  // url with 12 options for testing purposes
   // let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=12`;
 
   //retrieves data from the API

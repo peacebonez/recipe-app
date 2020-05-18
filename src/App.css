@@ -342,7 +342,6 @@ h4 {
 }
 
 .url-btn {
-  /* width: 100%; */
   margin: 1vw;
   color: #fff;
   font-weight: bold;
@@ -357,15 +356,4 @@ h4 {
 
 .url-btn:hover {
   background: rgb(41, 41, 41);
-}
-
-.instructions-container {
-  border: solid 1px black;
-  width: 100%;
-  padding: 2vw;
-}
-
-.instructions-container li {
-  padding: 0.75vw;
-  border-bottom: solid 1px gray;
 }
