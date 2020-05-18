@@ -18,15 +18,17 @@ export default function Heading({
   return (
     <div className="header-wrapper">
       <h1 className="title">Food Finder</h1>
-      <input
-        type="text"
-        className={isError ? "search-bar error" : "search-bar"}
-        name="search"
-        value={query}
-        placeholder={isError ? "RECIPE NOT FOUND" : "Search for Recipe..."}
-        onChange={handleChange}
-        onKeyDown={handleEnterSubmit}
-      ></input>
+      <Link to="/recipes">
+        <input
+          type="text"
+          className={isError ? "search-bar error" : "search-bar"}
+          name="search"
+          value={query}
+          placeholder={isError ? "RECIPE NOT FOUND" : "Search for Recipe..."}
+          onChange={handleChange}
+          onKeyDown={handleEnterSubmit}
+        ></input>
+      </Link>
       <Link to="/recipes">
         <button className="submit-btn" onClick={handleSubmit}>
           Submit

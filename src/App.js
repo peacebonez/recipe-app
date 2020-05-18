@@ -89,6 +89,7 @@ function App() {
     } else {
       getData();
       setQuery(""); //sets input bar back to empty
+      return <Redirect to="/recipes" />;
     }
   };
 

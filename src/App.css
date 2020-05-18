@@ -54,12 +54,15 @@ h4 {
 
 .search-bar {
   height: 4vh;
-  width: 50%;
+  /* width: 50%; */
   font-size: 1.5vw;
   padding: 1.5vw;
   box-shadow: 1px 1px 5px gray;
   outline: none;
   opacity: 50%;
+
+  width: 40vw;
+  transform: translateX(-5vw);
 }
 
 .search-bar:focus {
