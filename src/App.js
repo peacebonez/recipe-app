@@ -73,6 +73,8 @@ function App() {
   };
 
   //handles changes in user input
+
+  React.useEffect(() => {});
   const handleChange = (e) => {
     setIsError(false);
     setQuery(e.target.value);
@@ -82,6 +84,7 @@ function App() {
   const handleSubmit = () => {
     if (query === "") {
       setIsError(true);
+      setQuery("");
       return;
     } else {
       getData();
