@@ -31,7 +31,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   //use this URL, gives 100 options
-  let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=40`;
+  let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=36`;
 
   // url with 12 options for testing purposes
   // let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=12`;

@@ -11,6 +11,10 @@ button:active {
   transform: translate(1px, 1px);
 }
 
+a {
+  cursor: auto;
+}
+
 li,
 p {
   font-family: "Balsamiq Sans", cursive;
@@ -60,6 +64,7 @@ h4 {
   box-shadow: 1px 1px 5px gray;
   outline: none;
   opacity: 50%;
+  border-radius: 18px;
 
   width: 40vw;
   transform: translateX(-5vw);
