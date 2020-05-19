@@ -3,17 +3,10 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import RecipePage from "./RecipePage";
 
-export default function RecipeCard({
-  id,
-  url,
-  label,
-  image,
-  ingredientLines,
-  healthLabels,
-  servings,
-  handleFave,
-  removeFave,
-}) {
+export default function RecipeCard({ id, recipeObj, handleFave, removeFave }) {
+  const {
+    recipe: { label, image },
+  } = recipeObj;
   const [isShown, setIsShown] = useState(false);
   const [isFave, setIsFave] = useState(false);
 
@@ -71,12 +64,7 @@ export default function RecipeCard({
       </div>
       <RecipePage
         id={id}
-        url={url}
-        label={label}
-        image={image}
-        ingredientLines={ingredientLines}
-        healthLabels={healthLabels}
-        servings={servings}
+        recipeObj={recipeObj.recipe}
         isShown={isShown}
         setIsShown={setIsShown}
         handleClose={handleClose}

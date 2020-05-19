@@ -23,7 +23,7 @@ function App() {
 
   const [faves, setFaves] = useState([]);
   const localFaves = JSON.parse(localStorage.getItem("savedFaves")) || false;
-  console.log("local Faves.", localFaves);
+  // console.log("local Faves.", localFaves);
   //user search input
   const [query, setQuery] = useState("");
 
@@ -31,7 +31,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   //use this URL, gives 100 options
-  let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=100`;
+  let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=40`;
 
   // url with 12 options for testing purposes
   // let url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=12`;
@@ -41,15 +41,14 @@ function App() {
     setIsLoading(true);
     setIsError(false);
     const result = await Axios.get(url);
-    console.log("result.data.hits", result.data.hits);
+    // console.log("result.data.hits", result.data.hits);
     //if user search is not found
     if (result.data.hits.length === 0) {
       setIsLoading(false);
-      console.log("No results!");
       setIsError(true);
       return;
     }
-    console.log("result:", result);
+    // console.log("result:", result);
     setIsLoading(false);
     setIsError(false);
     //set the recipes as our result
@@ -58,7 +57,7 @@ function App() {
 
   // sets the favorite recipes array
   const handleFave = (obj) => {
-    console.log("Handle Faves obj,", obj);
+    // console.log("Handle Faves obj,", obj);
     setFaves([...faves, obj]);
     localStorage.setItem("savedFaves", JSON.stringify([...faves, obj]));
   };
@@ -74,7 +73,6 @@ function App() {
 
   //handles changes in user input
 
-  React.useEffect(() => {});
   const handleChange = (e) => {
     setIsError(false);
     setQuery(e.target.value);
@@ -93,8 +91,8 @@ function App() {
     }
   };
 
-  console.log("recipes,", recipes);
-  console.log("faves", faves);
+  // console.log("recipes,", recipes);
+  // console.log("faves", faves);
   return (
     <Router>
       <div className="App">

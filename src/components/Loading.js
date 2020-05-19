@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const styles = {
   content: {
-    fontSize: "3vw",
+    fontSize: "3vh",
     position: "absolute",
     left: "0",
     right: "0",

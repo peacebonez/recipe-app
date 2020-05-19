@@ -10,27 +10,12 @@ export default function RecipeContainer({ recipes, handleFave, removeFave }) {
       {recipes
         ? recipes.map((recipeObj) => {
             id++; //creates a unique id
-            const {
-              recipe: {
-                label,
-                image,
-                ingredientLines,
-                healthLabels,
-                yield: servings,
-                url,
-              },
-            } = recipeObj;
             recipeObj.id = id;
             return (
               <div className="card-page-container" key={recipeObj.id}>
                 <RecipeCard
                   id={recipeObj.id}
-                  label={label}
-                  image={image}
-                  url={url}
-                  ingredientLines={ingredientLines}
-                  healthLabels={healthLabels}
-                  servings={servings}
+                  recipeObj={recipeObj}
                   handleFave={handleFave}
                   removeFave={removeFave}
                 />

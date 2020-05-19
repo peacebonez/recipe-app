@@ -7,24 +7,11 @@ export default function FavesContainer({ recipes, removeFave, handleFave }) {
     <div className="recipe-container">
       {recipes
         ? recipes.map((recipeObj) => {
-            const {
-              label,
-              image,
-              ingredientLines,
-              healthLabels,
-              yield: servings,
-              url,
-            } = recipeObj;
             return (
               <div className="card-page-container" key={recipeObj.id}>
                 <FaveCard
                   id={recipeObj.id}
-                  label={label}
-                  image={image}
-                  url={url}
-                  ingredientLines={ingredientLines}
-                  healthLabels={healthLabels}
-                  servings={servings}
+                  recipeObj={recipeObj}
                   handleFave={handleFave}
                   removeFave={removeFave}
                 />

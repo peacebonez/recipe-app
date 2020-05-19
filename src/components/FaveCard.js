@@ -3,16 +3,7 @@ import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import RecipePage from "./RecipePage";
 
-export default function FaveCard({
-  id,
-  url,
-  label,
-  image,
-  ingredientLines,
-  healthLabels,
-  yield: servings,
-  removeFave,
-}) {
+export default function FaveCard({ id, recipeObj, removeFave }) {
   const [isShown, setIsShown] = useState(false);
 
   const handleOpen = () => {
@@ -22,6 +13,14 @@ export default function FaveCard({
   const handleClose = () => {
     setIsShown(false);
   };
+
+  const {
+    recipeObj: {
+      recipe: { label, image },
+    },
+  } = recipeObj;
+
+  console.log("recipeObj:", recipeObj.recipeObj.recipe);
 
   return (
     <>
@@ -58,12 +57,7 @@ export default function FaveCard({
       </div>
       <RecipePage
         id={id}
-        url={url}
-        label={label}
-        image={image}
-        ingredientLines={ingredientLines}
-        healthLabels={healthLabels}
-        servings={servings}
+        recipeObj={recipeObj.recipeObj.recipe}
         isShown={isShown}
         setIsShown={setIsShown}
         handleClose={handleClose}

@@ -5,12 +5,7 @@ import IngredientsList from "./IngredientsList";
 
 export default function RecipePage({
   id,
-  label,
-  image,
-  ingredientLines,
-  healthLabels,
-  servings,
-  url,
+  recipeObj,
   isShown,
   setIsShown,
   handleClose,
@@ -31,7 +26,16 @@ export default function RecipePage({
     };
   });
 
-  healthLabels = healthLabels.join();
+  const {
+    label,
+    image,
+    healthLabels,
+    ingredientLines,
+    yield: servings,
+    url,
+  } = recipeObj;
+
+  // console.log("RECIPE PAGE recipeobj:", recipeObj);
   return (
     <div
       className="popup-container"
@@ -48,7 +52,7 @@ export default function RecipePage({
           </button>
         </div>
         <h1>{label}</h1>
-        <h4>{healthLabels}</h4>
+        <h4>{healthLabels.join()}</h4>
       </div>
       <div className="popup-img-text-container">
         <IngredientsList

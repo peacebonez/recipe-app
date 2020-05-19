@@ -8,7 +8,7 @@
 }
 
 button:active {
-  transform: translate(1px, 4px);
+  transform: translate(1px, 1px);
 }
 
 li,
@@ -357,4 +357,95 @@ h4 {
 
 .url-btn:hover {
   background: rgb(41, 41, 41);
+}
+
+@media only screen and (max-width: 500px) {
+  .header-wrapper {
+    height: 10vw;
+  }
+
+  .search-bar {
+    height: 20px;
+    margin-left: 4vw;
+    font-size: 12px;
+  }
+
+  .submit-btn {
+    transform: translate(-3vw, -1vw) scale(1.5);
+  }
+
+  .home-btn {
+    transform: scale(2);
+  }
+
+  .recipe-card {
+    margin-top: 3vh;
+    width: 75%;
+    transform: translateX(10vw);
+  }
+  .card-footer {
+    justify-content: center;
+  }
+
+  .recipe-btn {
+    display: none;
+  }
+
+  .popup-container {
+    transform: translate(-50%, -70%);
+    width: 75%;
+  }
+
+  .popup-header-container {
+    /* height: 50%; */
+    border: none;
+    box-shadow: none;
+  }
+
+  .x-container button {
+    font-size: 20px;
+  }
+
+  .popup-header-container h1 {
+    font-size: 28px;
+  }
+
+  .popup-header-container h4 {
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+  }
+
+  .ingredients-container {
+    color: #fff;
+    overflow-y: scroll;
+    background: #555;
+    width: 100%;
+  }
+
+  .popup-img-text-container {
+    flex-direction: column;
+  }
+
+  .ingredients-container li {
+    font-size: 12px;
+  }
+
+  .ingredients-container h2 {
+    font-size: 20px;
+    margin-top: -5px;
+  }
+
+  .ingredients-container h4 {
+    font-size: 12px;
+  }
+
+  .popup-img-container img {
+    display: none;
+  }
+
+  .url-btn {
+    font-size: 16px;
+    margin-bottom: 2vh;
+  }
 }
